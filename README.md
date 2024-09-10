@@ -5,7 +5,7 @@
 [![Docs status](https://readthedocs.org/projects/aiida-workgraph/badge)](http://aiida-workgraph.readthedocs.io/)
 
 Efficiently design and manage flexible workflows with AiiDA, featuring an interactive GUI, checkpoints, provenance tracking, and remote execution capabilities.
-
+ 
 
 
 Here is a detailed comparison between the ``WorkGraph`` with two AiiDA built-in workflow components.
