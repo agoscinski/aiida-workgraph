@@ -9,13 +9,6 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.10', '3.12']
-        aiida-core-version: ['2.7', '2.8']
-
-    services:
-      rabbitmq:
-        image: rabbitmq:3.8.14-management
-        ports:
-        - 5672:5672
 
     steps:
     - uses: actions/checkout@v5
@@ -32,12 +25,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
         activate-environment: true
 
-    - name: Install dependencies from uv lock
+    - name: Install dependencies
       run: |
-        uv sync --locked --extra pre-commit --extra tests
-
-    - name: Override aiida-core version
-      run: uv pip install aiida-core==${{ matrix.aiida-core-version }}
+        uv sync --extra pre-commit --extra tests
 
     - name: Install playwright browsers
       run: playwright install

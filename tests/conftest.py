@@ -14,8 +14,8 @@ pytest_plugins = [
 
 @pytest.fixture(scope='session', autouse=True)
 def aiida_profile(aiida_config, aiida_profile_factory):
-    """Create and load a profile with RabbitMQ as broker."""
-    with aiida_profile_factory(aiida_config, broker_backend='core.rabbitmq') as profile:
+    """Create and load a profile with ZeroMQ as broker."""
+    with aiida_profile_factory(aiida_config, broker_backend='core.zeromq') as profile:
         yield profile
 
 
